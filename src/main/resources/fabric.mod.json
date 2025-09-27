@@ -5,24 +5,24 @@
 	"name": "Alkimia",
 	"description": "A mod about potion brewing and transmutation",
 	"authors": [
-		"Falling Pan"
+		"Top Tophat"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "MIT",
-	"icon": "assets/alchemymod/icon.png",
+	"icon": "assets/alkimia/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.falling_pan.alkimia.Alkimia"
+			"net.toptophat.alkimia.Alkimia"
 		],
 		"fabric-datagen": [
-			"net.falling_pan.alkimia.AlkimiaDataGenerator"
+			"net.toptophat.alkimia.AlkimiaDataGenerator"
 		],
 		"client": [
-			"net.falling_pan.alkimia.AlkimiaModClient"
+			"net.toptophat.alkimia.AlkimiaModClient"
 		]
 	},
 	"mixins": [
