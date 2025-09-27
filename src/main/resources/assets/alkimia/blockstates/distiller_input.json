@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "alkimia:block/distiller_input", "uvlock": false },
+    "facing=east":  { "model": "alkimia:block/distiller_input", "y":  90, "uvlock": false },
+    "facing=south": { "model": "alkimia:block/distiller_input", "y": 180, "uvlock": false },
+    "facing=west":  { "model": "alkimia:block/distiller_input", "y": 270, "uvlock": false }
+  }
+}

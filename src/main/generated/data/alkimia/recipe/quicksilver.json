@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "alkimia:quicksilver_tank"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "id": "alkimia:quicksilver"
+  }
+}

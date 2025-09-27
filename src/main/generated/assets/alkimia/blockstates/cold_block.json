@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "alkimia:block/cold_block"
+    }
+  }
+}

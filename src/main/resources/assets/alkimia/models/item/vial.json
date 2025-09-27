@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "alkimia:item/vial_empty"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "alkimia:full": 1
+      },
+      "model": "alkimia:item/vial_full"
+    }
+  ]
+}

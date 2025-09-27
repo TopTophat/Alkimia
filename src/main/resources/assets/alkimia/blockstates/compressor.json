@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "is_working=false": { "model": "alkimia:block/compressor"},
+    "is_working=true":  { "model": "alkimia:block/compressor_closed"}
+  }
+}

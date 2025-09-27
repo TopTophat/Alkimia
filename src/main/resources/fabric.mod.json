@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "alkimia",
+	"version": "${version}",
+	"name": "Alkimia",
+	"description": "A mod about potion brewing and transmutation",
+	"authors": [
+		"Falling Pan"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/alchemymod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.falling_pan.alkimia.Alkimia"
+		],
+		"fabric-datagen": [
+			"net.falling_pan.alkimia.AlkimiaDataGenerator"
+		],
+		"client": [
+			"net.falling_pan.alkimia.AlkimiaModClient"
+		]
+	},
+	"mixins": [
+		"alkimia.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

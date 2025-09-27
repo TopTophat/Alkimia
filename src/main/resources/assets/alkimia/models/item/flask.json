@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "alkimia:item/empty_flask"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "alkimia:full": 1
+      },
+      "model": "alkimia:item/full_flask"
+    }
+  ]
+}

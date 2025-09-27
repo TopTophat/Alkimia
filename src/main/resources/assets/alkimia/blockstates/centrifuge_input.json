@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "":
+    {
+      "model": "alkimia:block/centrifuge_input"
+    }
+  }
+}

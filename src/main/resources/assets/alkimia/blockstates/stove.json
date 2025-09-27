@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "facing=north,is_lit=false": { "model": "alkimia:block/stove", "uvlock": false },
+    "facing=east,is_lit=false":  { "model": "alkimia:block/stove", "y":  90, "uvlock": false },
+    "facing=south,is_lit=false": { "model": "alkimia:block/stove", "y": 180, "uvlock": false },
+    "facing=west,is_lit=false":  { "model": "alkimia:block/stove", "y": 270, "uvlock": false },
+    "facing=north,is_lit=true": { "model": "alkimia:block/stove_lit", "uvlock": false },
+    "facing=east,is_lit=true":  { "model": "alkimia:block/stove_lit", "y":  90, "uvlock": false },
+    "facing=south,is_lit=true": { "model": "alkimia:block/stove_lit", "y": 180, "uvlock": false },
+    "facing=west,is_lit=true":  { "model": "alkimia:block/stove_lit", "y": 270, "uvlock": false }
+  }
+}

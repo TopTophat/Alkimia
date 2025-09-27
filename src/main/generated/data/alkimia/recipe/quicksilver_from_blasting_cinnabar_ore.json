@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 35,
+  "experience": 0.1,
+  "group": "quicksilver",
+  "ingredient": {
+    "item": "alkimia:cinnabar_ore"
+  },
+  "result": {
+    "id": "alkimia:quicksilver"
+  }
+}

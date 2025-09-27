@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "alkimia:block/centrifuge_out", "uvlock": false },
+    "facing=east":  { "model": "alkimia:block/centrifuge_out", "y":  90, "uvlock": false },
+    "facing=south": { "model": "alkimia:block/centrifuge_out", "y": 180, "uvlock": false },
+    "facing=west":  { "model": "alkimia:block/centrifuge_out", "y": 270, "uvlock": false }
+  }
+}

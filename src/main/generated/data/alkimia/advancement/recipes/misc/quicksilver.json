@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_quicksilver_tank": {
+      "conditions": {
+        "items": [
+          {
+            "items": "alkimia:quicksilver_tank"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "alkimia:quicksilver"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_quicksilver_tank"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "alkimia:quicksilver"
+    ]
+  }
+}
