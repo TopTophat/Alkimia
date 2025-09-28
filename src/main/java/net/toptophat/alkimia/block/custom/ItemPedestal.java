@@ -79,8 +79,6 @@ public class ItemPedestal extends BlockWithEntity implements BlockEntityProvider
 
                 pedestal.markDirty();
                 world.updateListeners(pos, state, state, 0);
-            } else if (stack.getItem() == Items.STICK) {
-                world.setBlockState(pos, ModBlocks.ITEM_PEDESTAL_BASE.getDefaultState().with(IS_FAST, !world.getBlockState(pos).get(IS_FAST)));
             }
         }
 

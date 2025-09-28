@@ -1,6 +1,10 @@
 package net.toptophat.alkimia.block.custom;
 
 import com.mojang.serialization.MapCodec;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
+import net.minecraft.block.entity.BlockEntityTicker;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.fluid.Fluids;
 import net.toptophat.alkimia.block.ModBlocks;
 import net.toptophat.alkimia.block.entity.custom.TransmutingPedestalBlockEntity;
 import net.minecraft.block.*;
@@ -18,11 +22,28 @@ import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.toptophat.alkimia.fluid.ModFluids;
+import net.toptophat.alkimia.item.ModItems;
+import net.toptophat.alkimia.util.TickableBlockEntity;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class TransmutingPedestal extends BlockWithEntity implements BlockEntityProvider {
     public static final BooleanProperty IS_FAST = BooleanProperty.of("is_fast");
     public static final MapCodec<TransmutingPedestal> CODEC = TransmutingPedestal.createCodec(TransmutingPedestal::new);
+    public static List<TransmutingRecipe> transmuting_recipe_book;
+
+    public static void InitRecipes() {
+        transmuting_recipe_book = List.of(
+                new TransmutingRecipe(List.of(FluidVariant.blank(), FluidVariant.blank(), FluidVariant.blank(), FluidVariant.blank()),
+                        List.of(Items.LAPIS_LAZULI, Items.LAPIS_LAZULI, Items.LAPIS_LAZULI, Items.LAPIS_LAZULI),
+                        AlchemicalCrucible.aspectToInt(List.of()),
+                        Items.LAPIS_LAZULI,
+                        Items.DIAMOND,
+                        600)
+        );
+    }
 
     public TransmutingPedestal(Settings settings) {
         super(settings);
@@ -86,5 +107,11 @@ public class TransmutingPedestal extends BlockWithEntity implements BlockEntityP
 
         return ItemActionResult.SUCCESS;
 
+    }
+
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+        return TickableBlockEntity.getTicker(world);
     }
 }

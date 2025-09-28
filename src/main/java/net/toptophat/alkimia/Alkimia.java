@@ -48,6 +48,7 @@ public class Alkimia implements ModInitializer {
 		InfuserInput.InitRecipes();
 		CentrifugeInput.InitRecipes();
 		Compressor.InitRecipes();
+		TransmutingPedestal.InitRecipes();
 
 		FuelRegistry.INSTANCE.add(ModItems.LIQUID_SUNLIGHT, 30000);
 

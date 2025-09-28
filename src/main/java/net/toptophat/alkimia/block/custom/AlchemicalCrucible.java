@@ -235,7 +235,7 @@ public class AlchemicalCrucible extends BlockWithEntity implements BlockEntityPr
         return returnList;
     }
 
-    public List<Integer> getHalf(List<Integer> list) {
+    public static List<Integer> getHalf(List<Integer> list) {
         List<Integer> returnList = new ArrayList<>();
         if (list != null) {
             for (int i = 0; i < list.size(); i++) {

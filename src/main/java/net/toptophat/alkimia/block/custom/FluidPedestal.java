@@ -140,8 +140,6 @@ public class FluidPedestal extends BlockWithEntity implements BlockEntityProvide
                         world.updateListeners(pos, state, state, Block.NOTIFY_ALL);
                     }
                 }
-            } else if (stack.getItem() == Items.STICK) {
-                world.setBlockState(pos, ModBlocks.FLUID_PEDESTAL_BASE.getDefaultState().with(IS_FAST, !world.getBlockState(pos).get(IS_FAST)));
             }
         }
 
