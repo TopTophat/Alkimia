@@ -34,6 +34,8 @@ public class AlkimiaModClient implements ClientModInitializer {
         BlockEntityRendererFactories.register(ModBlockEntities.ITEM_PEDESTAL_BE, ItemPedestalBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.FLUID_PEDESTAL_BE, FluidPedestalBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.TRANSMUTING_PEDESTAL_BE, TransmutingPedestalBlockEntityRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.LIGHT_COLLECTOR_BE, LightCollectorBlockEntityRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.LENS_BE, LensBlockEntityRenderer::new);
         ModBlocks.registerBlockRenderLayers();
 
         FluidRenderHandlerRegistry.INSTANCE.register(

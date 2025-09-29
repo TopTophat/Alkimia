@@ -52,6 +52,8 @@ public class ModItemGroups {
         entries.add(ModBlocks.ITEM_PEDESTAL_BASE);
         entries.add(ModBlocks.FLUID_PEDESTAL_BASE);
         entries.add(ModBlocks.TRANSMUTING_PEDESTAL);
+        entries.add(ModBlocks.LENS_BASE);
+        entries.add(ModBlocks.LIGHT_COLLECTOR);
     }).icon(() -> new ItemStack(ModItems.QUICKSILVER)).build());
 
 

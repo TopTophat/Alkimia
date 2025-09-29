@@ -43,6 +43,8 @@
   "block.alkimia.item_pedestal_base": "Pedestal",
   "block.alkimia.fluid_pedestal_base": "Chalice",
   "block.alkimia.transmuting_pedestal": "Transmutation Pedestal",
+  "block.alkimia.lens_base": "Lens",
+  "block.alkimia.light_collector": "Light Collector",
 
   "tooltip.alkimia.cold_block.tooltip0": "Very cold, freezes entire bodies of water,",
   "tooltip.alkimia.cold_block.tooltip1": "may cause performance issues if placed in an ocean",

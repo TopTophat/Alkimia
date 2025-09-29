@@ -34,6 +34,14 @@ public class ModBlocks {
             new Mortar(AbstractBlock.Settings.create().strength(1f).sounds(BlockSoundGroup.STONE).nonOpaque()));
     public static final Block ITEM_PEDESTAL_BASE = registerBlock("item_pedestal_base",
             new ItemPedestal(AbstractBlock.Settings.create().strength(1f).sounds(BlockSoundGroup.GLASS).nonOpaque()));
+    public static final Block LIGHT_COLLECTOR = registerBlock("light_collector",
+            new LightCollector(AbstractBlock.Settings.create().strength(1f).sounds(BlockSoundGroup.GLASS).nonOpaque()));
+    public static final Block LENS_BASE = registerBlock("lens_base",
+            new Lens(AbstractBlock.Settings.create().strength(1f).sounds(BlockSoundGroup.GLASS).nonOpaque()));
+    public static final Block LENS_ROTARY_STAND = registerBlock("lens_rotary_stand",
+            new Block(AbstractBlock.Settings.create().strength(1f).sounds(BlockSoundGroup.GLASS).nonOpaque()));
+    public static final Block LENS_LENS = registerBlock("lens_lens",
+            new Block(AbstractBlock.Settings.create().strength(1f).sounds(BlockSoundGroup.GLASS).nonOpaque()));
     public static final Block TRANSMUTING_PEDESTAL = registerBlock("transmuting_pedestal",
             new TransmutingPedestal(AbstractBlock.Settings.create().strength(1f).sounds(BlockSoundGroup.GLASS).nonOpaque()));
     public static final Block ITEM_PEDESTAL_GLOBE = registerBlock("item_pedestal_globe",
@@ -150,5 +158,9 @@ public class ModBlocks {
         BlockRenderLayerMap.INSTANCE.putBlock(FLUID_PEDESTAL_BASE, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(FLUID_PEDESTAL_GLOBE, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(TRANSMUTING_PEDESTAL, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(LENS_BASE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(LENS_ROTARY_STAND, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(LENS_LENS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(LIGHT_COLLECTOR, RenderLayer.getTranslucent());
     }
 }

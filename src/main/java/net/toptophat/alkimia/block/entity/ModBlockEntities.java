@@ -63,6 +63,12 @@ public class ModBlockEntities {
     public static final BlockEntityType<FluidPedestalBlockEntity> FLUID_PEDESTAL_BE =
             Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(Alkimia.MOD_ID, "fluid_pedestal_be"),
                     BlockEntityType.Builder.create(FluidPedestalBlockEntity::new, ModBlocks.FLUID_PEDESTAL_BASE).build(null));
+    public static final BlockEntityType<LightCollectorBlockEntity> LIGHT_COLLECTOR_BE =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(Alkimia.MOD_ID, "light_collector_be"),
+                    BlockEntityType.Builder.create(LightCollectorBlockEntity::new, ModBlocks.LIGHT_COLLECTOR).build(null));
+    public static final BlockEntityType<LensBlockEntity> LENS_BE =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(Alkimia.MOD_ID, "lens_be"),
+                    BlockEntityType.Builder.create(LensBlockEntity::new, ModBlocks.LENS_BASE).build(null));
 
     public static void registerBlockEntities()
     {
