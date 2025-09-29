@@ -30,6 +30,24 @@ public class ModDataComponentTypes {
                             .packetCodec(PacketCodecs.INTEGER) // how it’s synced over network
                             .build()
             );
+    public static final ComponentType<Integer> LIGHT_AMOUNT =
+            Registry.register(
+                    Registries.DATA_COMPONENT_TYPE,
+                    Identifier.of(Alkimia.MOD_ID, "light_amount"),
+                    ComponentType.<Integer>builder()
+                            .codec(Codec.INT)                 // how it’s saved to NBT
+                            .packetCodec(PacketCodecs.INTEGER) // how it’s synced over network
+                            .build()
+            );
+    public static final ComponentType<Integer> LIGHT_CAPACITY =
+            Registry.register(
+                    Registries.DATA_COMPONENT_TYPE,
+                    Identifier.of(Alkimia.MOD_ID, "light_capacity"),
+                    ComponentType.<Integer>builder()
+                            .codec(Codec.INT)                 // how it’s saved to NBT
+                            .packetCodec(PacketCodecs.INTEGER) // how it’s synced over network
+                            .build()
+            );
     public static final ComponentType<Integer> PAGE =
             Registry.register(
                     Registries.DATA_COMPONENT_TYPE,

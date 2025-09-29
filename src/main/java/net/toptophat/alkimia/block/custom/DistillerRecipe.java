@@ -14,8 +14,9 @@ public class DistillerRecipe {
     public List<Item> inputItems; //max 5
     public List<Item> remainders; //max 5
     public int cooktime; //ticks
+    public boolean isCrystalCollector;
 
-    public DistillerRecipe(List<FluidVariant> inputFluids, List<Integer> fluidInputAmounts, List<FluidVariant> outputFluids, List<Integer> fluidOutputAmounts, List<Item> inputItems, List<Item> remainders, int cooktime)
+    public DistillerRecipe(List<FluidVariant> inputFluids, List<Integer> fluidInputAmounts, List<FluidVariant> outputFluids, List<Integer> fluidOutputAmounts, List<Item> inputItems, List<Item> remainders, int cooktime, boolean isCrystalCollector)
     {
         this.inputFluids = inputFluids;
         this.fluidInputAmounts = fluidInputAmounts;
@@ -24,6 +25,7 @@ public class DistillerRecipe {
         this.inputItems = inputItems;
         this.remainders = remainders;
         this.cooktime = cooktime;
+        this.isCrystalCollector = isCrystalCollector;
     }
 
     //example recipe item -> fluid

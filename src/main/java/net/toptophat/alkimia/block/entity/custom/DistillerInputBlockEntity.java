@@ -2,10 +2,14 @@ package net.toptophat.alkimia.block.entity.custom;
 
 import com.mojang.serialization.DataResult;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
+import net.minecraft.fluid.Fluids;
 import net.toptophat.alkimia.block.ModBlocks;
 import net.toptophat.alkimia.block.custom.*;
 import net.toptophat.alkimia.block.entity.ImplementedInventory;
 import net.toptophat.alkimia.block.entity.ModBlockEntities;
+import net.toptophat.alkimia.component.ModDataComponentTypes;
+import net.toptophat.alkimia.fluid.ModFluids;
+import net.toptophat.alkimia.item.ModItems;
 import net.toptophat.alkimia.util.TickableBlockEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -400,6 +404,36 @@ public class DistillerInputBlockEntity extends BlockEntity implements Implemente
         {
             if (world.getBlockEntity(getWest(world.getBlockState(pos).get(Properties.HORIZONTAL_FACING), pos)) instanceof DistillerOutputBlockEntity out && world.getBlockState(getWest(world.getBlockState(pos).get(Properties.HORIZONTAL_FACING), pos)).get(Properties.HORIZONTAL_FACING) == world.getBlockState(pos).get(Properties.HORIZONTAL_FACING))
             {
+                if (recipe.isCrystalCollector && inventory.getFirst().get(ModDataComponentTypes.LIGHT_AMOUNT) > 0)
+                {
+                    System.out.println(inventory.getFirst().get(ModDataComponentTypes.LIGHT_AMOUNT) + " is bigger than 0");
+                    inventory.getFirst().set(ModDataComponentTypes.LIGHT_AMOUNT, inventory.getFirst().get(ModDataComponentTypes.LIGHT_AMOUNT) - 1);
+                    System.out.println(inventory.getFirst().get(ModDataComponentTypes.LIGHT_AMOUNT) + " new amount 1 lower");
+                    for (int i = 0; i < recipe.fluidOutputAmounts.size(); i++) {
+                        switch (whereIsThisFluid(recipe.outputFluids.get(i), List.of(out.storedFluid1, out.storedFluid2, out.storedFluid3, out.storedFluid4)))
+                        {
+                            case 0 -> out.amount1 += recipe.fluidOutputAmounts.get(i);
+                            case 1 -> out.amount2 += recipe.fluidOutputAmounts.get(i);
+                            case 2 -> out.amount3 += recipe.fluidOutputAmounts.get(i);
+                            case 3 -> out.amount4 += recipe.fluidOutputAmounts.get(i);
+                        }
+                        switch (whereIsThisFluid(recipe.outputFluids.get(i), List.of(out.storedFluid1, out.storedFluid2, out.storedFluid3, out.storedFluid4)))
+                        {
+                            case 0 -> out.storedFluid1 = recipe.outputFluids.get(i);
+                            case 1 -> out.storedFluid2 = recipe.outputFluids.get(i);
+                            case 2 -> out.storedFluid3 = recipe.outputFluids.get(i);
+                            case 3 -> out.storedFluid4 = recipe.outputFluids.get(i);
+                        }
+                    }
+                    world.playSound(null, this.pos, SoundEvents.ITEM_BUCKET_EMPTY, SoundCategory.BLOCKS, 1, 1);
+                    markDirty();
+                    out.markDirty();
+                    world.updateListeners(pos, world.getBlockState(this.pos), world.getBlockState(this.pos), Block.NOTIFY_ALL);
+                    world.updateListeners(getWest(world.getBlockState(pos).get(Properties.HORIZONTAL_FACING), pos), world.getBlockState(getWest(world.getBlockState(pos).get(Properties.HORIZONTAL_FACING), pos)), world.getBlockState(getWest(world.getBlockState(pos).get(Properties.HORIZONTAL_FACING), pos)), Block.NOTIFY_ALL);
+                    return;
+                } else if (recipe.isCrystalCollector && inventory.getFirst().get(ModDataComponentTypes.LIGHT_AMOUNT) == 0) {
+                    return;
+                }
                 clear();
                 inventory.set(0, recipe.remainders.get(0).getDefaultStack().copyWithCount(1));
                 inventory.set(1, recipe.remainders.get(1).getDefaultStack().copyWithCount(1));

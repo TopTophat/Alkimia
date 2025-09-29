@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
 import net.toptophat.alkimia.block.entity.custom.DistillerInputBlockEntity;
 import net.toptophat.alkimia.component.ModDataComponentTypes;
 import net.toptophat.alkimia.fluid.ModFluids;
+import net.toptophat.alkimia.item.ModItems;
 import net.toptophat.alkimia.util.TickableBlockEntity;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -37,9 +38,12 @@ public class DistillerInput extends BlockWithEntity implements BlockEntityProvid
 
     public static void InitRecipes() {
         distiller_recipe_book = List.of(
-                new DistillerRecipe(List.of(FluidVariant.of(ModFluids.SOUL)), List.of(10), List.of(FluidVariant.of(ModFluids.LIQUID_SOUL)), List.of(1), List.of(), List.of(Items.AIR, Items.AIR, Items.AIR, Items.AIR, Items.AIR), 20),
-                new DistillerRecipe(List.of(FluidVariant.of(ModFluids.SOUL), FluidVariant.of(ModFluids.DIAMOND_DUST)), List.of(100, 10), List.of(FluidVariant.of(ModFluids.LIQUID_SOUL)), List.of(50), List.of(Items.LAPIS_LAZULI), List.of(Items.QUARTZ, Items.AIR, Items.AIR, Items.AIR, Items.AIR), 200),
-                new DistillerRecipe(List.of(), List.of(), List.of(FluidVariant.of(Fluids.LAVA)), List.of(100), List.of(Blocks.MAGMA_BLOCK.asItem()), List.of(Blocks.NETHERRACK.asItem(), Items.AIR, Items.AIR, Items.AIR, Items.AIR), 400)
+                new DistillerRecipe(List.of(FluidVariant.of(ModFluids.SOUL)), List.of(10), List.of(FluidVariant.of(ModFluids.LIQUID_SOUL)), List.of(1), List.of(), List.of(Items.AIR, Items.AIR, Items.AIR, Items.AIR, Items.AIR), 20, false),
+                new DistillerRecipe(List.of(FluidVariant.of(ModFluids.SOUL), FluidVariant.of(ModFluids.DIAMOND_DUST)), List.of(100, 10), List.of(FluidVariant.of(ModFluids.LIQUID_SOUL)), List.of(50), List.of(Items.LAPIS_LAZULI), List.of(Items.QUARTZ, Items.AIR, Items.AIR, Items.AIR, Items.AIR), 200, false),
+                new DistillerRecipe(List.of(), List.of(), List.of(FluidVariant.of(Fluids.LAVA)), List.of(100), List.of(Blocks.MAGMA_BLOCK.asItem()), List.of(Blocks.NETHERRACK.asItem(), Items.AIR, Items.AIR, Items.AIR, Items.AIR), 400, false),
+                new DistillerRecipe(List.of(), List.of(), List.of(FluidVariant.of(Fluids.LAVA)), List.of(1), List.of(ModItems.SUNLIGHT_COLLECTOR), List.of(ModItems.SUNLIGHT_COLLECTOR, Items.AIR, Items.AIR, Items.AIR, Items.AIR), 1, true),
+                new DistillerRecipe(List.of(), List.of(), List.of(FluidVariant.of(ModFluids.DIAMOND_DUST)), List.of(1), List.of(ModItems.SUNLIGHT_COLLECTOR), List.of(ModItems.SUNLIGHT_COLLECTOR, Items.AIR, Items.AIR, Items.AIR, Items.AIR), 2, true),
+                new DistillerRecipe(List.of(), List.of(), List.of(FluidVariant.of(ModFluids.SOUL)), List.of(1), List.of(ModItems.SUNLIGHT_COLLECTOR), List.of(ModItems.SUNLIGHT_COLLECTOR, Items.AIR, Items.AIR, Items.AIR, Items.AIR), 3, true)
         );
     }
 

@@ -13,6 +13,9 @@
   "item.alkimia.tiny_vial": "Tiny Vial",
   "item.alkimia.flask": "Flask",
   "item.alkimia.guidebook": "Alchemist's Journal",
+  "item.alkimia.sunlight_collector": "Sunshine Quartz",
+  "item.alkimia.moonlight_collector": "Empowered Moonstone",
+  "item.alkimia.starlight_collector": "Astral Diamond",
 
   "block.alkimia.quicksilver_tank": "Quicksilver Tank",
   "block.alkimia.cinnabar_block": "Cinnabar Block",
@@ -61,6 +64,7 @@
   "tooltip.alkimia.alchemical_crucible.tooltip": "Used to make §epotions§r and §etransmute§r items",
   "tooltip.alkimia.jar.tooltip": "Used to store powders, liquids and gasses",
   "tooltip.alkimia.vial.tooltip1": "Contains %1$sMb of %2$s",
+  "tooltip.alkimia.light_collector_crystal": "Contained light %1$s/%2$s",
   "tooltip.alkimia.vial.tooltip2": "Capacity - %1$sMb",
   "tooltip.alkimia.calcifying_crucible.tooltip": "Collects §ecalcination§r results from grate",
   "tooltip.alkimia.tray.tooltip": "Used to §ecalcine§r items",

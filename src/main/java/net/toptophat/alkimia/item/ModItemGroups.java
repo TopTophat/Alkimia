@@ -27,6 +27,9 @@ public class ModItemGroups {
         entries.add(ModBlocks.MORTAR);
         entries.add(ModItems.PESTLE);
         entries.add(ModItems.GUIDEBOOK);
+        entries.add(ModItems.SUNLIGHT_COLLECTOR);
+        entries.add(ModItems.MOONLIGHT_COLLECTOR);
+        entries.add(ModItems.STARLIGHT_COLLECTOR);
         entries.add(ModBlocks.ALCHEMICAL_CRUCIBLE);
         entries.add(ModBlocks.JAR);
         entries.add(ModItems.DIAMOND_DUST_PILE);

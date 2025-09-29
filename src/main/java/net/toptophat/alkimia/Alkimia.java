@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.toptophat.alkimia.block.ModBlocks;
 import net.toptophat.alkimia.block.custom.*;
 import net.toptophat.alkimia.block.entity.ModBlockEntities;
+import net.toptophat.alkimia.block.entity.custom.LightCollectorBlockEntity;
 import net.toptophat.alkimia.component.ModDataComponentTypes;
 import net.toptophat.alkimia.item.ModItemGroups;
 import net.toptophat.alkimia.item.ModItems;
@@ -42,6 +43,7 @@ public class Alkimia implements ModInitializer {
 		FlaskItem.InitMaps();
 		Stove.InitMaps();
 		FlashPowderItem.InitMaps();
+		LightCollectorBlockEntity.initMaps();
 		Tray.InitRecipes();
 		DistillerInput.InitRecipes();
 		CondenserInput.InitRecipes();

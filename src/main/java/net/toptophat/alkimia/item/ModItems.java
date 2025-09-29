@@ -59,6 +59,28 @@ public class ModItems {
     public static final Item VIAL = registerItem("vial", new VialItem(new Item.Settings().maxCount(1).component(ModDataComponentTypes.AMOUNT, 0).component(ModDataComponentTypes.CAPACITY, 100).component(ModDataComponentTypes.STORED_FLUID, FluidVariant.blank())));
     public static final Item TINY_VIAL = registerItem("tiny_vial", new TinyVialItem(new Item.Settings().maxCount(1).component(ModDataComponentTypes.AMOUNT, 0).component(ModDataComponentTypes.CAPACITY, 50).component(ModDataComponentTypes.STORED_FLUID, FluidVariant.blank())));
     public static final Item FLASK = registerItem("flask", new FlaskItem(new Item.Settings().maxCount(1).component(ModDataComponentTypes.AMOUNT, 0).component(ModDataComponentTypes.CAPACITY, 1000).component(ModDataComponentTypes.STORED_FLUID, FluidVariant.blank())));
+    public static final Item SUNLIGHT_COLLECTOR = registerItem("sunlight_collector", new Item(new Item.Settings().maxCount(1).component(ModDataComponentTypes.LIGHT_AMOUNT, 10).component(ModDataComponentTypes.LIGHT_CAPACITY, 1000))
+    {
+        @Override
+        public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
+            tooltip.add(Text.translatable("tooltip.alkimia.light_collector_crystal", stack.get(ModDataComponentTypes.LIGHT_AMOUNT), stack.get(ModDataComponentTypes.LIGHT_CAPACITY)));
+            super.appendTooltip(stack, context, tooltip, type);
+        }
+    });
+    public static final Item MOONLIGHT_COLLECTOR = registerItem("moonlight_collector", new Item(new Item.Settings().maxCount(1).component(ModDataComponentTypes.LIGHT_AMOUNT, 0).component(ModDataComponentTypes.LIGHT_CAPACITY, 1000)) {
+        @Override
+        public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
+            tooltip.add(Text.translatable("tooltip.alkimia.light_collector_crystal", stack.get(ModDataComponentTypes.LIGHT_AMOUNT), stack.get(ModDataComponentTypes.LIGHT_CAPACITY)));
+            super.appendTooltip(stack, context, tooltip, type);
+        }
+    });
+    public static final Item STARLIGHT_COLLECTOR = registerItem("starlight_collector", new Item(new Item.Settings().maxCount(1).component(ModDataComponentTypes.LIGHT_AMOUNT, 0).component(ModDataComponentTypes.LIGHT_CAPACITY, 1000)) {
+        @Override
+        public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
+            tooltip.add(Text.translatable("tooltip.alkimia.light_collector_crystal", stack.get(ModDataComponentTypes.LIGHT_AMOUNT), stack.get(ModDataComponentTypes.LIGHT_CAPACITY)));
+            super.appendTooltip(stack, context, tooltip, type);
+        }
+    });
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Alkimia.MOD_ID, name), item);

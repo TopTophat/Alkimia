@@ -3,6 +3,8 @@ package net.toptophat.alkimia.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityTicker;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -18,6 +20,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.toptophat.alkimia.block.entity.custom.ItemPedestalBlockEntity;
 import net.toptophat.alkimia.block.entity.custom.LightCollectorBlockEntity;
+import net.toptophat.alkimia.util.TickableBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
 public class LightCollector extends BlockWithEntity implements BlockEntityProvider {
@@ -77,5 +80,11 @@ public class LightCollector extends BlockWithEntity implements BlockEntityProvid
 
         return ItemActionResult.SUCCESS;
 
+    }
+
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+        return TickableBlockEntity.getTicker(world);
     }
 }
