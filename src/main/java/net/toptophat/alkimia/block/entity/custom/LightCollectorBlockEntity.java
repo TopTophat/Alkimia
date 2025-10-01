@@ -211,6 +211,9 @@ public class LightCollectorBlockEntity extends BlockEntity implements Implemente
                         lens.boundTo[0] = pos.getX();
                         lens.boundTo[1] = pos.getY();
                         lens.boundTo[2] = pos.getZ();
+                        lens.boundToGraphics[0] = (float) pos.toCenterPos().x;
+                        lens.boundToGraphics[1] = (float) pos.toCenterPos().y;
+                        lens.boundToGraphics[2] = (float) pos.toCenterPos().z;
                     }
                 }
             }

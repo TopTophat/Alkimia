@@ -21,6 +21,7 @@ import org.jetbrains.annotations.Nullable;
 public class LensBlockEntity extends BlockEntity implements TickableBlockEntity {
     public int recipeIndex = 0;
     public int[] boundTo = new int[3];
+    public float[] boundToGraphics = new float[3];
     public boolean isBoundValid = false;
 
     public LensBlockEntity(BlockPos pos, BlockState state) {
@@ -33,6 +34,9 @@ public class LensBlockEntity extends BlockEntity implements TickableBlockEntity 
         nbt.putIntArray("boundTo", this.boundTo);
         nbt.putBoolean("isBoundValid", this.isBoundValid);
         nbt.putInt("recipeIndex", this.recipeIndex);
+        nbt.putFloat("graphicsX", this.boundToGraphics[0]);
+        nbt.putFloat("graphicsY", this.boundToGraphics[1]);
+        nbt.putFloat("graphicsZ", this.boundToGraphics[2]);
     }
 
     @Override
@@ -41,6 +45,9 @@ public class LensBlockEntity extends BlockEntity implements TickableBlockEntity 
         this.boundTo = nbt.getIntArray("boundTo");
         this.isBoundValid = nbt.getBoolean("isBoundValid");
         this.recipeIndex = nbt.getInt("recipeIndex");
+        this.boundToGraphics[0] = nbt.getFloat("graphicsX");
+        this.boundToGraphics[1] = nbt.getFloat("graphicsY");
+        this.boundToGraphics[2] = nbt.getFloat("graphicsZ");
     }
 
     @Nullable
