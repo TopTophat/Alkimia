@@ -194,7 +194,7 @@ public class LightCollectorBlockEntity extends BlockEntity implements Implemente
 
     public int getNeededTime()
     {
-        return (int)(10f / calculateLensBonus());
+        return (int)(250f / calculateLensBonus());
     }
 
     public int getConnectedLenses()
