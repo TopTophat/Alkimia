@@ -90,7 +90,6 @@ public class Alkimia implements ModInitializer {
 			}
 		});
 
-		//TODO: #CODING LIGHT COLLECTOR
 		//TODO: #CODING MORE ASPECTS
 		//TODO: #CODING MORE BREWS
 		//TODO: #CODING THROWABLE BREWS

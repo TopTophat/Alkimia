@@ -42,8 +42,8 @@ public class DistillerInput extends BlockWithEntity implements BlockEntityProvid
                 new DistillerRecipe(List.of(FluidVariant.of(ModFluids.SOUL), FluidVariant.of(ModFluids.DIAMOND_DUST)), List.of(100, 10), List.of(FluidVariant.of(ModFluids.LIQUID_SOUL)), List.of(50), List.of(Items.LAPIS_LAZULI), List.of(Items.QUARTZ, Items.AIR, Items.AIR, Items.AIR, Items.AIR), 200, false),
                 new DistillerRecipe(List.of(), List.of(), List.of(FluidVariant.of(Fluids.LAVA)), List.of(100), List.of(Blocks.MAGMA_BLOCK.asItem()), List.of(Blocks.NETHERRACK.asItem(), Items.AIR, Items.AIR, Items.AIR, Items.AIR), 400, false),
                 new DistillerRecipe(List.of(), List.of(), List.of(FluidVariant.of(Fluids.LAVA)), List.of(1), List.of(ModItems.SUNLIGHT_COLLECTOR), List.of(ModItems.SUNLIGHT_COLLECTOR, Items.AIR, Items.AIR, Items.AIR, Items.AIR), 1, true),
-                new DistillerRecipe(List.of(), List.of(), List.of(FluidVariant.of(ModFluids.DIAMOND_DUST)), List.of(1), List.of(ModItems.SUNLIGHT_COLLECTOR), List.of(ModItems.SUNLIGHT_COLLECTOR, Items.AIR, Items.AIR, Items.AIR, Items.AIR), 2, true),
-                new DistillerRecipe(List.of(), List.of(), List.of(FluidVariant.of(ModFluids.SOUL)), List.of(1), List.of(ModItems.SUNLIGHT_COLLECTOR), List.of(ModItems.SUNLIGHT_COLLECTOR, Items.AIR, Items.AIR, Items.AIR, Items.AIR), 3, true)
+                new DistillerRecipe(List.of(), List.of(), List.of(FluidVariant.of(ModFluids.DIAMOND_DUST)), List.of(1), List.of(ModItems.MOONLIGHT_COLLECTOR), List.of(ModItems.MOONLIGHT_COLLECTOR, Items.AIR, Items.AIR, Items.AIR, Items.AIR), 2, true),
+                new DistillerRecipe(List.of(), List.of(), List.of(FluidVariant.of(ModFluids.SOUL)), List.of(1), List.of(ModItems.STARLIGHT_COLLECTOR), List.of(ModItems.STARLIGHT_COLLECTOR, Items.AIR, Items.AIR, Items.AIR, Items.AIR), 3, true)
         );
     }
 

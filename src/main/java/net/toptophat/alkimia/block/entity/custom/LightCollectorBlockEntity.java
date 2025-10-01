@@ -28,6 +28,7 @@ public class LightCollectorBlockEntity extends BlockEntity implements Implemente
     public static Map<Item, Block> CRYSTAL_TO_BLOCK;
     public int progress;
     public int recipeIndex; //0 nothing, 1 sun, 2 moon, 3 stars
+    public boolean isRunning;
 
     public static void initMaps()
     {
@@ -53,6 +54,7 @@ public class LightCollectorBlockEntity extends BlockEntity implements Implemente
         Inventories.writeNbt(nbt, inventory, registryLookup);
         nbt.putInt("progress", this.progress);
         nbt.putInt("recipeIndex", this.recipeIndex);
+        nbt.putBoolean("isRunning", this.isRunning);
     }
 
     @Override
@@ -64,6 +66,7 @@ public class LightCollectorBlockEntity extends BlockEntity implements Implemente
         Inventories.readNbt(nbt, inventory, registryLookup);
         this.recipeIndex = nbt.getInt("recipeIndex");
         this.progress = nbt.getInt("progress");
+        isRunning = nbt.getBoolean("isRunning");
     }
 
     @Nullable
@@ -98,69 +101,128 @@ public class LightCollectorBlockEntity extends BlockEntity implements Implemente
     public void tick() {
         if (isAssembled() && CRYSTAL_TO_BLOCK.containsKey(inventory.getFirst().getItem()) && CRYSTAL_TO_BLOCK.get(inventory.getFirst().getItem()) == world.getBlockState(pos.down()).getBlock())
         {
+            System.out.println("assembled");
             if (inventory.getFirst().get(ModDataComponentTypes.LIGHT_AMOUNT) < inventory.getFirst().get(ModDataComponentTypes.LIGHT_CAPACITY))
             {
                 if (inventory.getFirst().getItem() == ModItems.SUNLIGHT_COLLECTOR)
                 {
+                    System.out.println("sun recipe");
                     if (world.isDay())
                     {
+                        isRunning = true;
+                        System.out.println("day");
                         if (recipeIndex != 1)
                         {
                             recipeIndex = 1;
                             progress = 0;
                         }
                         progress++;
+                        if (progress >= getNeededTime())
+                        {
+                            inventory.getFirst().set(ModDataComponentTypes.LIGHT_AMOUNT, inventory.getFirst().get(ModDataComponentTypes.LIGHT_AMOUNT) + 1);
+                            progress = 0;
+                        }
+                    }
+                    else {
+
+                        isRunning = false;
                     }
                 }
-
-                if (inventory.getFirst().getItem() == ModItems.MOONLIGHT_COLLECTOR)
+                else if (inventory.getFirst().getItem() == ModItems.MOONLIGHT_COLLECTOR)
                 {
                     if (world.isNight() && world.getMoonPhase() != 4)
                     {
+                        isRunning = true;
                         if (recipeIndex != 2)
                         {
                             recipeIndex = 2;
                             progress = 0;
                         }
                         progress++;
+                        if (progress >= getNeededTime())
+                        {
+                            inventory.getFirst().set(ModDataComponentTypes.LIGHT_AMOUNT, inventory.getFirst().get(ModDataComponentTypes.LIGHT_AMOUNT) + 1);
+                            progress = 0;
+                        }
+                    }
+                    else {
+
+                        isRunning = false;
                     }
                 }
-
-                if (inventory.getFirst().getItem() == ModItems.STARLIGHT_COLLECTOR)
+                else if (inventory.getFirst().getItem() == ModItems.STARLIGHT_COLLECTOR)
                 {
                     if (world.isNight() && world.getMoonPhase() == 4)
                     {
+                        isRunning = true;
                         if (recipeIndex != 3)
                         {
                             recipeIndex = 3;
                             progress = 0;
                         }
                         progress++;
+                        if (progress >= getNeededTime())
+                        {
+                            inventory.getFirst().set(ModDataComponentTypes.LIGHT_AMOUNT, inventory.getFirst().get(ModDataComponentTypes.LIGHT_AMOUNT) + 1);
+                            progress = 0;
+                        }
+                    }
+                    else {
+
+                        isRunning = false;
                     }
                 }
+                else {
+                    recipeIndex = 0;
+                    progress = 0;
+                    isRunning = false;
+                }
+            }
+            else {
+                recipeIndex = 0;
+                progress = 0;
+                isRunning = false;
             }
         }
         else {
             recipeIndex = 0;
             progress = 0;
+            isRunning = false;
         }
+        world.updateListeners(pos, getCachedState(), getCachedState(), Block.NOTIFY_ALL);
     }
 
     public int getNeededTime()
     {
-        return 10;
+        return (int)(10f / calculateLensBonus());
     }
 
     public int getConnectedLenses()
     {
-        return 0;
+        System.out.println("getting lenses");
+        int counter = 0;
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 7; j++) {
+                for (int k = 0; k < 7; k++) {
+                    if (world.getBlockEntity(new BlockPos(i + pos.getX() - 3, j + pos.getY() - 3, k + pos.getZ() - 3)) instanceof LensBlockEntity lens && lens.recipeIndex == recipeIndex)
+                    {
+                        System.out.println("lens detected");
+                        counter++;
+                        lens.boundTo[0] = pos.getX();
+                        lens.boundTo[1] = pos.getY();
+                        lens.boundTo[2] = pos.getZ();
+                    }
+                }
+            }
+        }
+        return counter;
     }
 
     public float calculateLensBonus()
     {
         float bonus = 1;
         float bonusTotal = 1;
-        float lower = 0.6f;
+        float lower = 0.75f;
         for (int i = 0; i < getConnectedLenses(); i++) {
             bonusTotal += bonus;
             bonus *= lower;
