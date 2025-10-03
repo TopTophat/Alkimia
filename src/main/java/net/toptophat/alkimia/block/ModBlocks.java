@@ -142,25 +142,25 @@ public class ModBlocks {
     }
 
     public static void registerBlockRenderLayers() {
-        BlockRenderLayerMap.INSTANCE.putBlock(JAR, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(CALCIFYING_CRUCIBLE, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(DISTILLER_INPUT, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(DISTILLER_OUTPUT, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(CONDENSER_OUTPUT, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(CONDENSER_INPUT, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(INFUSER_INPUT, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(INFUSER_OUTPUT, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(CENTRIFUGE_INPUT, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(CENTRIFUGE_OUT, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(COMPRESSOR, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ITEM_PEDESTAL_BASE, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ITEM_PEDESTAL_GLOBE, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(FLUID_PEDESTAL_BASE, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(FLUID_PEDESTAL_GLOBE, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(TRANSMUTING_PEDESTAL, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(LENS_BASE, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(LENS_ROTARY_STAND, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(LENS_LENS, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(LIGHT_COLLECTOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(JAR, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(CALCIFYING_CRUCIBLE, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(DISTILLER_INPUT, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(DISTILLER_OUTPUT, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(CONDENSER_OUTPUT, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(CONDENSER_INPUT, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(INFUSER_INPUT, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(INFUSER_OUTPUT, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(CENTRIFUGE_INPUT, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(CENTRIFUGE_OUT, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(COMPRESSOR, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(ITEM_PEDESTAL_BASE, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(ITEM_PEDESTAL_GLOBE, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(FLUID_PEDESTAL_BASE, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(FLUID_PEDESTAL_GLOBE, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(TRANSMUTING_PEDESTAL, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(LENS_BASE, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(LENS_ROTARY_STAND, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(LENS_LENS, RenderLayer.getTextBackgroundSeeThrough());
+        BlockRenderLayerMap.INSTANCE.putBlock(LIGHT_COLLECTOR, RenderLayer.getTextBackgroundSeeThrough());
     }
 }
