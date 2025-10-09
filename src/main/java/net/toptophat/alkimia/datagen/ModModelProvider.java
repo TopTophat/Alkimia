@@ -28,7 +28,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.QUICKSILVER, Models.GENERATED);
         itemModelGenerator.register(ModItems.LIQUID_SUNLIGHT, Models.GENERATED);
         itemModelGenerator.register(ModItems.FLASH_POWDER, Models.GENERATED);
-        itemModelGenerator.register(ModItems.NIGHT_VISION_POTION, Models.GENERATED);
         itemModelGenerator.register(ModItems.PESTLE, Models.GENERATED);
         itemModelGenerator.register(ModItems.GLOW_FULL, Models.GENERATED);
         itemModelGenerator.register(ModItems.GLOW_HALF, Models.GENERATED);

@@ -4,8 +4,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.UseAction;
 
-public class NightVisionPotionItem extends Item{
-    public NightVisionPotionItem(Item.Settings settings) {
+public class PotionItem extends Item{
+    public PotionItem(Item.Settings settings) {
         super(settings);
     }
 

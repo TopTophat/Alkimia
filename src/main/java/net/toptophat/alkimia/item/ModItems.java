@@ -1,6 +1,8 @@
 package net.toptophat.alkimia.item;
 
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
+import net.minecraft.client.render.RenderLayer;
 import net.toptophat.alkimia.Alkimia;
 import net.toptophat.alkimia.component.ModDataComponentTypes;
 import net.toptophat.alkimia.fluid.ModFluids;
@@ -11,6 +13,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.toptophat.alkimia.item.custom.PotionItem;
 
 import java.util.List;
 
@@ -30,7 +33,8 @@ public class ModItems {
     public static final Item FLASH_POWDER = registerItem("flash_powder", new FlashPowderItem(new Item.Settings().fireproof()));
     public static final Item GUIDEBOOK = registerItem("guidebook", new GuidebookItem(new Item.Settings().maxCount(1).component(ModDataComponentTypes.PAGE, 0)));
 
-    public static final Item NIGHT_VISION_POTION = registerItem("night_vision_potion", new NightVisionPotionItem(new Item.Settings().food(ModFoodComponents.NIGHT_VISION_POTION).maxCount(12)));
+    public static final Item NIGHT_VISION_POTION = registerItem("night_vision_potion", new PotionItem(new Item.Settings().food(ModFoodComponents.NIGHT_VISION_POTION).maxCount(12)));
+    public static final Item NIGHT_VISION_THROW_POTION = registerItem("night_vision_throw_potion", new NightVisionThrowPotion(new Item.Settings().maxCount(12)));
 
     public static final Item LIQUID_SUNLIGHT = registerItem("liquid_sunlight", new Item(new Item.Settings().recipeRemainder(Items.GLASS_BOTTLE))
     {

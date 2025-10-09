@@ -5,9 +5,14 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.toptophat.alkimia.block.ModBlocks;
 import net.toptophat.alkimia.block.entity.ModBlockEntities;
 import net.toptophat.alkimia.block.entity.renderer.*;
+import net.toptophat.alkimia.entity.ModEntities;
+import net.toptophat.alkimia.entity.client.NightVisionThrowPotionEntityModel;
+import net.toptophat.alkimia.entity.client.NightVisionThrowPotionEntityRenderer;
 import net.toptophat.alkimia.fluid.ModFluids;
 import net.toptophat.alkimia.util.ModModelPredicates;
 import net.minecraft.client.render.RenderLayer;
@@ -36,6 +41,10 @@ public class AlkimiaModClient implements ClientModInitializer {
         BlockEntityRendererFactories.register(ModBlockEntities.TRANSMUTING_PEDESTAL_BE, TransmutingPedestalBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.LIGHT_COLLECTOR_BE, LightCollectorBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.LENS_BE, LensBlockEntityRenderer::new);
+
+        EntityModelLayerRegistry.registerModelLayer(NightVisionThrowPotionEntityModel.NIGHT_VISION, NightVisionThrowPotionEntityModel::getTexturedModelData);
+        EntityRendererRegistry.register(ModEntities.NIGHT_VISION_THROW_POTION_ENTITY, NightVisionThrowPotionEntityRenderer::new);
+
         ModBlocks.registerBlockRenderLayers();
 
         FluidRenderHandlerRegistry.INSTANCE.register(

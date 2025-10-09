@@ -9,6 +9,7 @@ import net.toptophat.alkimia.block.custom.*;
 import net.toptophat.alkimia.block.entity.ModBlockEntities;
 import net.toptophat.alkimia.block.entity.custom.LightCollectorBlockEntity;
 import net.toptophat.alkimia.component.ModDataComponentTypes;
+import net.toptophat.alkimia.entity.ModEntities;
 import net.toptophat.alkimia.item.ModItemGroups;
 import net.toptophat.alkimia.item.ModItems;
 import net.toptophat.alkimia.item.custom.FlashPowderItem;
@@ -34,6 +35,8 @@ public class Alkimia implements ModInitializer {
 		ModBlockEntities.registerBlockEntities();
 
 		ModDataComponentTypes.registerDataComponentTypes();
+
+		ModEntities.registerModEntities();
 
 		AlchemicalCrucible.initMaps();
 		Mortar.InitMaps();
@@ -90,16 +93,16 @@ public class Alkimia implements ModInitializer {
 			}
 		});
 
-		//TODO: #CODING MORE ASPECTS
 		//TODO: #CODING MORE BREWS
 		//TODO: #CODING THROWABLE BREWS
 		//TODO: #CODING BREW HURLER BAZOOKA
 		//TODO: #CODING CURSES!!!
 		//TODO: #CODING ANTIDOTES?
+		//TODO: #CODING MORE ASPECTS
 		//TODO: #PAINTING PAINT ALL THE BOOK TEXTURES
 		//TODO: #PAINTING PAINT ALL TEXTURES
 		//TODO: #PAINTING PAINT TINY VIAL TEXTURE
-		//TODO: #PAINTING REMAKE THE COOLER
+		//TODO: #PAINTING ADD SIMPLE ANIMS TO BREWS AND IMPROVE LABELS ON THEM (more antic/old look)
 		//TODO: #CONTENT ADD ALL THE CONTENT
 	}
 }

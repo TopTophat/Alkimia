@@ -3,6 +3,7 @@
   "item.alkimia.quicksilver": "Quicksilver",
   "item.alkimia.flash_powder": "Flash Powder",
   "item.alkimia.night_vision_potion": "Darkvision Brew",
+  "item.alkimia.night_vision_throw_potion": "Thrown Darkvision Brew",
   "item.alkimia.liquid_sunlight": "Liquid Sunlight",
   "item.alkimia.pestle": "Pestle",
   "item.alkimia.diamond_dust_pile": "Diamond Dust",
@@ -103,5 +104,7 @@
   "tooltip.alkimia.copper_ingot": "Half of METAL",
   "tooltip.alkimia.glowstone_dust": "Half of GLOW",
 
-  "itemgroup.alkimia.alchemy": "Alkimia"
+  "itemgroup.alkimia.alchemy": "Alkimia",
+
+  "entity.alkimia.night_vision_throw_potion_entity": "Thrown Darkvision Brew"
 }

@@ -24,6 +24,7 @@ public class ModItemGroups {
         entries.add(ModBlocks.DEAD_PLAGUE);
         entries.add(ModItems.LIQUID_SUNLIGHT);
         entries.add(ModItems.NIGHT_VISION_POTION);
+        entries.add(ModItems.NIGHT_VISION_THROW_POTION);
         entries.add(ModBlocks.MORTAR);
         entries.add(ModItems.PESTLE);
         entries.add(ModItems.GUIDEBOOK);
