@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "alkimia:block/raw_soulium_block"
+  }
+}
